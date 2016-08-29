@@ -3,10 +3,11 @@ package br.com.candle.conf;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
 
 @Configuration
 @EnableWebMvc
@@ -20,6 +21,9 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter
       configurer.enable();
    }
 
+   //FIXME verificar de onde vem o FacesServlet
+     
+    
    @Bean
    public InternalResourceViewResolver internalResourceViewResolver()
    {
@@ -28,4 +32,6 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter
       resolver.setSuffix(".jsp");
       return resolver;
    }
+   
+   
 }
